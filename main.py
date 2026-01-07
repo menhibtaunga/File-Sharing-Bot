@@ -1,8 +1,10 @@
 import asyncio
-from bot import start_bot
+from bot import Bot
 
 async def main():
-    await start_bot()
+    bot = Bot()
+    await bot.start()
+    await asyncio.Event().wait()  # bot ko zinda rakhega
 
 if __name__ == "__main__":
     asyncio.run(main())
